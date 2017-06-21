@@ -1,0 +1,59 @@
+---
+title: Pentox - Sample Size Validation
+output: pdf_document
+urlcolor: blue
+bibliography: sections/bibliography.bib
+---
+
+```{r setup, echo = FALSE, eval = TRUE}
+##opts_chunk$set(dev = 'pdf')
+opts_chunk$set(cache.path = 'cache/',
+               width    = 200,
+               fig.height = 8,
+               fig.width  = 8,
+               warning = FALSE,
+               message = FALSE)
+options(digits = 3)
+## Ensure anchors are assessed first
+## opts_knit$set(eval.after = 'echo')
+## Hooks
+## knit_hooks$set(anchor = hook_anchor)
+## Set a seed
+set.seed(69027181)
+## Set sensible defaults
+ggplot2.opts <- list()
+ggplot2.opts$binwidth <- 30
+library(pwr)
+library(TrialSize)
+
+```
+
+```{r backup, echo = FALSE, eval = FALSE}
+## Make a backup of current output based on time stamp by obtaining the
+## modified time of the existing file and constructing a command to
+## copy this to the sub-directory 'arch/' modifying the filename to include
+## the timestamp
+mtime <- gsub(' GMT', '', file.info('qc_pentox_sample_size.pdf')$mtime)
+mtime <- gsub(' ', '-', mtime)
+cmd <- paste0('cp qc_pentox_sample_size.pdf arch/qc_pentox_sample_size-', mtime, '.pdf && bzip2 arch/qc_pentox_sample_size-', mtime, '.pdf')
+system(cmd)
+
+```
+
+# {.tabset .tabset-fade .tabset-pills}
+
+```{r child = 'sections/overview.Rmd', eval = TRUE}
+```
+
+```{r child = 'sections/methods.Rmd', eval = TRUE}
+```
+
+```{r child = 'sections/results.Rmd', eval = TRUE}
+```
+
+```{r child = 'sections/appendix.Rmd', eval = TRUE}
+```
+
+## References
+
+<!-- # References -->
