@@ -1,0 +1,29 @@
+## Results
+
+### Test of Proportions
+
+```{r parameters, echo = FALSE, warning = FALSE, message = FALSE, cache = FALSE, eval = TRUE}
+## Set various parameters for the simulations
+n                 <- seq(from = 100, to = 1000, by = 100)
+missing           <- seq(from = 0.01, to = 0.1, by = 0.01)
+loss_to_follow_up <- 0.1
+attrition         <-  seq(from = 0.01, to = 0.1, by = 0.01)
+mean              <- seq(from = 20, to = 40, by = 5)
+sd                <-  seq(from = 5, to = 20, by = 5)
+
+
+```
+
+
+```{r simulations, echo = FALSE, warning = FALSE, message = FALSE, cache = FALSE, eval = TRUE}
+
+```
+
+
+
+```{r plots, echo = FALSE, warning = FALSE, message = FALSE, cache = FALSE, eval = TRUE}
+
+```
+
+
+One final comment on this approach is that it assumes the analyses will be conducted purely on the risk categories alone and no other information on individuals will be included.  This may be the intention but often co-variates are used in the statistical analyses and in doing so increase the power to detect a difference as the variation attributable to co-variates is accounted for in the analytical process and an estimate of the variation attributable to the predictor of interest, in this case the categorisation of head circumference, is obtained.  The stated numbers are in essence a worst case scenario and including co-variates may result in an analysis that has greater power than that which has been calculated.  An example of the impact of including co-variates on simulation based sample size calculations can be found [here](http://egap.org/content/power-analysis-simulations-r).
